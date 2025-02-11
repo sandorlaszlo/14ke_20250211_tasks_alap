@@ -36,7 +36,7 @@ class TaskController extends Controller
         $validated = $request->validated();
         $validated['user_id'] = auth()->user()->id;
         $task = Task::create($validated);
-        return response()->json(new TaskResource($task));
+        return response()->json(new TaskResource($task), 201);
     }
 
     /**
